@@ -1,233 +1,241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CandyCraft Network | Reglas Oficiales</title>
-  <meta name="description" content="Conoce las normas oficiales de CandyCraft Network. Juega limpio, respeta y disfruta de la mejor experiencia survival, fullpvp y mucho más." />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CandyCraft Network — Reglas Oficiales (Completo)</title>
+  <meta name="description" content="Reglas oficiales de CandyCraft Network. Modalidades, sanciones, proceso de reportes, guía de pruebas, FAQ y recursos. Lee con atención." />
+  <meta name="author" content="CandyCraft Network" />
+  <meta name="theme-color" content="#ff87d7" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23ff5ec4'/><text x='50' y='60' font-size='46' text-anchor='middle' fill='white' font-family='sans-serif'>CC</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* ===== Estilos base ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* ===========================================================
+       CANDYCRAFT - REGLAS OFICIALES - CSS INTEGRADO (extenso)
+       ===========================================================
+       Diseño moderno, tipografía legible, responsive, accesible.
+    */
+    :root{
+      --bg:#06060a;
+      --panel:#0f1720;
+      --muted:#9fb4c7;
+      --text:#eaf6ff;
+      --accent1:#ff5ec4;
+      --accent2:#ffa35e;
+      --glass: rgba(255,255,255,0.03);
+      --success:#7be495;
+      --danger:#ff6b6b;
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; padding:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,#030309 0%, #06111a 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.55;
+      font-size:15px;
     }
 
-    body {
-      background-color: #0e0e10;
-      color: #f1f1f1;
-      font-family: 'Poppins', sans-serif;
-      overflow-x: hidden;
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:9999;
+      display:flex; align-items:center; gap:16px;
+      padding:10px 18px; background: linear-gradient(180deg, rgba(6,6,10,0.6), rgba(6,6,10,0.35));
+      border-bottom:1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px);
+    }
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
+    .logo{
+      width:48px; height:48px; border-radius:10px;
+      background: linear-gradient(135deg,var(--accent1),var(--accent2));
+      display:grid; place-items:center; font-weight:800; font-family: 'Roboto Slab', serif;
+      font-size:18px; color:#071017; box-shadow:0 10px 40px rgba(255,94,196,0.12);
+    }
+    .brand-title{line-height:1; font-weight:700}
+    .brand-sub{font-size:12px; color:var(--muted); margin-top:2px}
+
+    .nav{margin-left:auto; display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+    .nav a{
+      color:var(--muted); text-decoration:none; padding:8px 12px; border-radius:8px; font-weight:600; font-size:14px;
+    }
+    .nav a:hover{color:#fff; background:linear-gradient(90deg, rgba(255,94,196,0.06), rgba(255,163,94,0.04))}
+
+    /* Header hero */
+    header.hero{
+      padding:48px 20px; text-align:center;
+      background: linear-gradient(180deg, rgba(255,94,196,0.04), rgba(255,163,94,0.02));
+      border-bottom:1px solid rgba(255,255,255,0.02);
+    }
+    header.hero h1{font-family:'Roboto Slab', serif; font-size:42px; margin:0 0 8px}
+    header.hero p{margin:0; color:var(--muted); font-size:18px}
+
+    .container{max-width:var(--maxw); margin:28px auto; padding:0 16px}
+
+    /* Grid layout */
+    .layout{display:grid; grid-template-columns: 1fr 360px; gap:24px; align-items:start}
+    @media (max-width:1100px){ .layout{grid-template-columns:1fr} .nav{display:none} .logo{width:44px;height:44px} }
+
+    /* Card */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px; padding:20px; border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 12px 40px rgba(2,6,23,0.6);
     }
 
-    header {
-      background: radial-gradient(circle at 20% 50%, #ff7ad9, #ff9a5c, #ff5ec4);
-      padding: 80px 20px;
-      text-align: center;
-      color: #fff;
-      animation: fadeIn 1.5s ease-in-out;
+    h2.section-title{
+      color:var(--accent2); font-size:20px; margin:0 0 12px; display:flex; align-items:center; gap:12px;
+      border-bottom:2px solid rgba(255,94,196,0.04); padding-bottom:10px;
     }
 
-    header h1 {
-      font-size: 3em;
-      font-weight: 800;
+    .muted{color:var(--muted); font-size:13px}
+
+    /* Rules list */
+    .rules-grid{display:grid; gap:12px}
+    .rule-item{
+      background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.008));
+      border-radius:10px; padding:14px; border:1px solid rgba(255,255,255,0.02);
+    }
+    .rule-item h4{margin:0 0 6px; color:#fff}
+    .rule-item p{margin:0; color:var(--muted)}
+
+    /* Accordion */
+    .accordion{margin-top:6px; border-radius:12px; overflow:hidden}
+    .acc-item{border-top:1px solid rgba(255,255,255,0.02)}
+    .acc-head{
+      display:flex; justify-content:space-between; align-items:center; gap:12px; padding:14px 16px; cursor:pointer;
+    }
+    .acc-head h5{margin:0; font-size:15px}
+    .acc-body{padding:0 16px 16px; color:var(--muted); display:none}
+    .acc-body.open{display:block}
+
+    /* table */
+    .table-wrap{overflow:auto; border-radius:10px; margin-top:8px}
+    table.rules-table{width:100%; border-collapse:collapse; min-width:760px}
+    table.rules-table th, table.rules-table td{padding:12px 14px; border-bottom:1px dashed rgba(255,255,255,0.03); text-align:left}
+    table.rules-table th{color:var(--muted); font-weight:700; font-size:13px}
+    table.rules-table td{color:#e7f2ff; font-size:14px}
+
+    /* sidebar */
+    aside .card{position:sticky; top:88px}
+    .search{display:flex; gap:8px; align-items:center; padding:8px; border-radius:10px; background:rgba(255,255,255,0.02)}
+    .search input{flex:1; background:transparent; border:none; outline:none; color:inherit; padding:4px 6px}
+    .btn{display:inline-flex; gap:8px; align-items:center; background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#071017; padding:10px 12px; border-radius:10px; border:none; font-weight:700; cursor:pointer}
+    .btn.ghost{background:transparent; color:var(--accent1); border:1px solid rgba(255,94,196,0.06)}
+
+    /* footer */
+    footer.site-footer{max-width:var(--maxw); margin:28px auto 68px; color:var(--muted); text-align:center; font-size:13px}
+
+    /* print */
+    @media print{
+      .topbar, nav, .btn, .search, aside, footer.site-footer { display:none !important }
+      body{background:white; color:black}
+      .container{max-width:100%}
+      .card{border:1px solid #ddd; box-shadow:none; background:white}
     }
 
-    header p {
-      font-size: 1.2em;
-      opacity: 0.9;
-      margin-top: 10px;
-    }
-
-    nav {
-      background-color: #181818;
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      border-bottom: 2px solid #ff7ad9;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav a {
-      color: #ff89d8;
-      text-decoration: none;
-      font-weight: 600;
-      margin: 0 20px;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffa35e;
-      text-shadow: 0px 0px 10px #ff7ad9;
-    }
-
-    section {
-      padding: 60px 30px;
-      max-width: 1000px;
-      margin: auto;
-      animation: fadeInUp 0.8s ease;
-    }
-
-    section h2 {
-      color: #ffa35e;
-      font-size: 2em;
-      border-bottom: 3px solid #ff7ad9;
-      padding-bottom: 8px;
-      margin-bottom: 25px;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 10px;
-    }
-
-    li {
-      background-color: #1b1b1b;
-      border-left: 4px solid #ff7ad9;
-      margin: 15px 0;
-      padding: 15px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-
-    li:hover {
-      background-color: #252525;
-      transform: scale(1.02);
-    }
-
-    footer {
-      background-color: #111;
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9em;
-      color: #bbb;
-      margin-top: 80px;
-    }
-
-    footer a {
-      color: #ff89d8;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    footer a:hover {
-      color: #ffa35e;
-    }
-
-    /* ===== Animaciones ===== */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ===== Botones principales ===== */
-    .btn-container {
-      text-align: center;
-      margin: 50px 0;
-    }
-
-    .btn {
-      background: linear-gradient(90deg, #ff7ad9, #ffa35e);
-      color: white;
-      padding: 15px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-      box-shadow: 0px 4px 15px rgba(255, 122, 217, 0.3);
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 0px 20px rgba(255, 163, 94, 0.6);
-    }
-
+    /* accessibility focus */
+    a:focus, button:focus, input:focus{outline: 3px solid rgba(255,94,196,0.18); outline-offset:2px}
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>🍬 CandyCraft Network</h1>
-    <p>Las reglas oficiales de nuestra comunidad — Respeta, diviértete y juega limpio.</p>
+  <!-- TOPBAR -->
+  <div class="topbar" role="banner" aria-label="Barra superior">
+    <a class="brand" href="#" aria-label="CandyCraft Home">
+      <div class="logo" aria-hidden="true">CC</div>
+      <div>
+        <div class="brand-title">CandyCraft</div>
+        <div class="brand-sub">Normas Oficiales</div>
+      </div>
+    </a>
+
+    <nav class="nav" role="navigation" aria-label="Navegación principal">
+      <a href="#intro">Inicio</a>
+      <a href="#generales">Generales</a>
+      <a href="#modalidades">Modalidades</a>
+      <a href="#sanciones">Sanciones</a>
+      <a href="#evidencias">Evidencias</a>
+      <a href="#faq">FAQ</a>
+      <a href="#links">Tienda / Discord</a>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="intro" role="region" aria-label="Introducción">
+    <div class="container card" style="text-align:left">
+      <h1 style="margin-bottom:8px">🍭 Reglas Oficiales de CandyCraft Network</h1>
+      <p class="muted">Estas normas están diseñadas para preservar la experiencia de juego. Son claras, justas y se aplican a todos por igual. Lee con atención — el desconocimiento no exime del cumplimiento.</p>
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+        <button class="btn" onclick="document.getElementById('generales').scrollIntoView({behavior:'smooth'})">Leer reglas generales</button>
+        <button class="btn ghost" onclick="navigator.clipboard?.writeText(location.href).then(()=>alert('Enlace copiado'))">Compartir enlace</button>
+      </div>
+      <p class="muted" style="margin-top:12px">Última actualización: Octubre 2025</p>
+    </div>
   </header>
 
-  <nav>
-    <a href="#generales">Generales</a>
-    <a href="#modalidades">Modalidades</a>
-    <a href="#discord">Discord</a>
-    <a href="#links">Enlaces</a>
-  </nav>
+  <!-- LAYOUT -->
+  <div class="container layout" role="main">
 
-  <section id="generales">
-    <h2>📜 Reglas Generales</h2>
-    <ul>
-      <li>❌ Está prohibido el uso de hacks, mods o cualquier cliente que otorgue ventajas injustas.</li>
-      <li>💬 No se permite el spam, flood, ni la publicidad de otros servidores.</li>
-      <li>🤝 Respeta a todos los jugadores y al equipo de staff en todo momento.</li>
-      <li>⚠️ Cualquier tipo de bug o glitch debe ser reportado, no aprovechado.</li>
-      <li>🚫 No está permitido el contenido ofensivo, racista, sexual o discriminatorio.</li>
-      <li>🎭 No te hagas pasar por miembros del staff ni suplantes identidades.</li>
-      <li>🛑 El uso de multicuentas con fines de beneficio o evasión de sanción está prohibido.</li>
-    </ul>
-  </section>
+    <!-- MAIN COLUMN -->
+    <div>
 
-  <section id="modalidades">
-    <h2>⚔️ Reglas por Modalidad</h2>
+      <!-- SECTION: GENERAL RULES (VERY EXTENSIVE) -->
+      <section id="generales" class="card" aria-labelledby="gen-title">
+        <h2 class="section-title" id="gen-title">📜 Reglas Generales (detalle completo)</h2>
 
-    <h3>🌍 Survival</h3>
-    <ul>
-      <li>🏠 Prohibido el griefing fuera del PvP o zonas de guerra.</li>
-      <li>💥 No abuses del lag ni generes sobrecarga con redstone.</li>
-      <li>📍 Respeta las zonas protegidas y los terrenos de otros jugadores.</li>
-    </ul>
+        <div class="rules-grid">
+          <article class="rule-item" id="rule-1">
+            <h4>1. Uso de cheats, clients modificados y scripts</h4>
+            <p class="muted">Prohibimos cualquier software o modificación que otorgue ventaja injusta. Esto incluye (pero no se limita a): X-Ray, KillAura, Fly, AutoClickers, macros que automaticen acciones, o paquetes/clients con funciones de ventaja.</p>
+            <ol style="margin-top:10px; color:var(--muted); padding-left:18px">
+              <li><strong>Detección y pruebas:</strong> se requiere evidencia sólida (video, logs, capturas con HUD) para ban permanente.</li>
+              <li><strong>Sanciones:</strong> ban permanente para pruebas concluyentes; tempban para evidencia parcial/dudas hasta investigación.</li>
+              <li><strong>Si crees que no hay intención:</strong> explica tu caso en el canal de apelaciones y aporta evidencia.</li>
+            </ol>
+          </article>
 
-    <h3>🔥 FullPvP</h3>
-    <ul>
-      <li>⚔️ Se permite el PvP libre, pero no el uso de cheats o scripts automáticos.</li>
-      <li>🛡️ No se permite abusar de bugs en zonas seguras o kits.</li>
-      <li>👥 El team está permitido, pero el abuso de cuentas secundarias no lo está.</li>
-    </ul>
+          <article class="rule-item" id="rule-2">
+            <h4>2. Spam, publicidad y contenido malicioso</h4>
+            <p class="muted">No se permite publicar enlaces externos, direcciones a otros servidores, códigos promocionales no autorizados, ni enviar mensajes repetitivos (spam/flood) en chat público o privado.</p>
+            <ul style="color:var(--muted); padding-left:18px">
+              <li>Publicitar tiendas o servidores sin permiso: sanción (mute → tempban).</li>
+              <li>Mensajes con enlaces maliciosos (phishing): baneo inmediato y reporte a plataformas correspondientes.</li>
+            </ul>
+          </article>
 
-    <h3>💎 Lobby y Auth</h3>
-    <ul>
-      <li>🔑 No se permite el uso de macros o auto-login scripts.</li>
-      <li>💤 Evita permanecer AFK de forma prolongada en el lobby.</li>
-    </ul>
-  </section>
+          <article class="rule-item" id="rule-3">
+            <h4>3. Respeto y conducta</h4>
+            <p class="muted">Respeto absoluto hacia otros jugadores: agresiones personales, racismo, discriminación, amenazas o difusión de contenido sensible serán sancionadas severamente.</p>
+            <p class="muted">Toma en cuenta el contexto: insultos casuales entre amigos no autorizan la falta de respeto pública. Si alguien se siente ofendido, se actuará según pruebas y contexto.</p>
+          </article>
 
-  <section id="discord">
-    <h2>💬 Reglas del Discord</h2>
-    <ul>
-      <li>🗣️ Sé respetuoso con todos los miembros de la comunidad.</li>
-      <li>📢 No hagas spam, flood ni envíes enlaces inapropiados.</li>
-      <li>🚷 Prohibido cualquier tipo de contenido NSFW o discriminatorio.</li>
-      <li>🧠 Usa los canales correctamente según su propósito.</li>
-      <li>🔒 No compartas información privada ni personal de nadie.</li>
-      <li>📌 Sigue las indicaciones de los administradores y moderadores.</li>
-    </ul>
-  </section>
+          <article class="rule-item" id="rule-4">
+            <h4>4. Abuso de bugs, exploits y duplicación</h4>
+            <p class="muted">Si encuentras un bug o exploit, deja de usarlo inmediatamente y repórtalo. Aprovecharse intencionalmente puede conllevar sanción temporal o permanente según la gravedad.</p>
+          </article>
 
-  <section id="links">
-    <h2>🔗 Enlaces Oficiales</h2>
-    <div class="btn-container">
-      <a class="btn" href="https://candy-shop-webstore.tebex.io/" target="_blank">🛒 Tienda Oficial</a>
-      <a class="btn" href="https://discord.gg/9Bhe5pEf2g" target="_blank">💬 Únete a nuestro Discord</a>
-    </div>
-  </section>
+          <article class="rule-item" id="rule-5">
+            <h4>5. Suplantación de identidad</h4>
+            <p class="muted">Fingir ser otro usuario, suplantar staff, usar skins o nicks que inducen a error puede llevar a sanción inmediata. Mantén tu identidad y respeta la identidad ajena.</p>
+          </article>
 
-  <footer>
-    &copy; 2025 CandyCraft Network | Diseñado con 💖 por el equipo de desarrollo.<br>
-    <a href="https://candy-shop-webstore.tebex.io/" target="_blank">Tienda</a> ·
-    <a href="https://discord.gg/9Bhe5pEf2g" target="_blank">Discord</a>
-  </footer>
+          <article class="rule-item" id="rule-6">
+            <h4>6. Responsabilidad en el uso de cuentas</h4>
+            <p class="muted">No uses multicuentas para evadir sanciones, manipular sorteos o abusar del servidor. Si una cuenta principal infringe, sus alts se consideran vinculados y pueden ser sancionados.</p>
+          </article>
 
-</body>
-</html>
+          <article class="rule-item" id="rule-7">
+            <h4>7. Comportamiento en eventos y sorteos</h4>
+            <p class="muted">Sigue las reglas del evento. Cualquier intento de fraude, manipulación de resultados o abuso en sorteos será sancionado con pérdida de premios y posibles sanciones adicionales.</p>
+          </article>
+
+          <article class="rule-item" id="rule-8">
+            <h4>8. Interacción con menores</h4>
+            <p class="muted">Se prohíbe contenido sexual explícito. Si hay sospecha de problemas legales o abuso, se colaborará con autoridades si es necesario. Protege la privacidad.</p>
+          </article>
+
+          <article class="rule-item" id
